@@ -1,40 +1,39 @@
-# Titanic — Análise Estatística de Sobrevivência
+# Titanic — Statistical Analysis of Survival
 
-Projeto da disciplina de **Estatística Descritiva** do MBA em Ciência de Dados.
+Project for the **Descriptive Statistics** course of the MBA in Data Science.
 
-## Objetivo
+## Objective
 
-Analisar o perfil dos passageiros do Titanic e identificar padrões de sobrevivência associados à classe, sexo e faixa etária, com foco em distribuição de tarifas e desigualdades demográficas. As tarifas originais em £1912 são corrigidas para £2024 por meio de correção inflacionária encadeada.
+Analyze the profile of Titanic passengers and identify survival patterns associated with class, sex, and age group, focusing on fare distribution and demographic inequalities. Original fares in £1912 are adjusted to £2024 through chained inflation correction.
 
-## Dados
+## Data
 
-| Arquivo | Fonte | Descrição |
+| File | Source | Description |
 |---|---|---|
-| `titanic.csv` | Professor | Dataset principal: passageiros, tarifas e resultado de sobrevivência |
-| `99_extras/titanic/a-millennium-of-macroeconomic-data-for-the-uk.xlsx` | Bank of England | Índice composto de preços do Reino Unido 1209–2016. Usado para corrigir tarifas de 1912 a 2016 |
+| `titanic.csv` | Professor | Main dataset: passengers, fares, and survival outcome |
+| `99_extras/titanic/a-millennium-of-macroeconomic-data-for-the-uk.xlsx` | Bank of England | UK composite price index 1209–2016. Used to adjust fares from 1912 to 2016 |
 
-Fontes externas:
-- [Bank of England — A Millennium of Macroeconomic Data for the UK (v3.1)](https://www.bankofengland.co.uk/statistics/research-datasets): aba *A47. Wages and prices*, coluna H (índice normalizado para 100 em 2016)
-- [World Bank — Consumer Price Index, GBR (FP.CPI.TOTL)](https://api.worldbank.org/v2/country/GBR/indicator/FP.CPI.TOTL): API pública, sem autenticação. Estende a correção de 2016 a 2024
+External sources:
+- [Bank of England — A Millennium of Macroeconomic Data for the UK (v3.1)](https://www.bankofengland.co.uk/statistics/research-datasets): tab *A47. Wages and prices*, column H (index normalized to 100 in 2016)
+- [World Bank — Consumer Price Index, GBR (FP.CPI.TOTL)](https://api.worldbank.org/v2/country/GBR/indicator/FP.CPI.TOTL): public API, no authentication. Extends the correction from 2016 to 2024
 
-## Estrutura do Notebook
+## Notebook Structure
 
 1. **Imports**
-2. **Carregamento e Preparação** — carregamento do dataset, criação da variável de faixa etária e correção inflacionária das tarifas (BoE + World Bank)
-3. **Análise Exploratória** — distribuição de tarifas corrigidas, análise por classe e variáveis qualitativas (sexo, classe, faixa etária)
-4. **Síntese e Conclusões** — tabelas descritivas com tarifas em £1912 e £2024
+2. **Loading and Preparation** — dataset loading, age group variable creation, and inflation adjustment of fares (BoE + World Bank)
+3. **Exploratory Analysis** — adjusted fare distribution, analysis by class and qualitative variables (sex, class, age group)
+4. **Summary and Conclusions** — descriptive tables with fares in £1912 and £2024
 
-## Principais Achados
+## Key Findings
 
-- **Taxa de sobrevivência geral: 38,6%** — mais de 6 em cada 10 passageiros não sobreviveram
-- Passageiros de 1ª classe tiveram taxa de sobrevivência de **64,5%**, contra **24,4%** na 3ª classe
-- Mulheres sobreviveram a uma taxa de **74,2%**, frente a **19,4%** dos homens
-- Sobreviventes pagaram tarifa média **2,1x maior** que a dos não sobreviventes
-- A 1ª classe gerou a maior parte da receita com menos de 25% dos passageiros e teve a maior taxa de sobrevivência; a 3ª classe teve a menor receita, mais da metade dos passageiros e a pior taxa de sobrevivência
-- A tarifa mediana da 3ª classe equivale a aproximadamente **£ 900 em 2024**; a tarifa mediana da 1ª classe supera **£ 6.900** e a média ultrapassa **£ 9.600**
+- **Overall survival rate: 38.6%** — more than 6 out of 10 passengers did not survive
+- 1st class passengers had a survival rate of **64.5%**, compared to **24.4%** in 3rd class
+- Women survived at a rate of **74.2%**, compared to **19.4%** for men
+- Survivors paid an average fare **2.1x higher** than non-survivors
+- 1st class generated most of the revenue with less than 25% of passengers and had the highest survival rate; 3rd class had the lowest revenue, more than half of the passengers, and the worst survival rate
+- The median 3rd class fare is equivalent to approximately **£900 in 2024**; the median 1st class fare exceeds **£6,900** and the average surpasses **£9,600**
 
-
-## Requisitos
+## Requirements
 
 ```
 pandas
